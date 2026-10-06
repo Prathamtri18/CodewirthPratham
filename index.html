@@ -1,0 +1,418 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Petals - Flower Shop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d94f70;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #d94f70;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background: linear-gradient(
+                rgba(255, 220, 230, 0.75),
+                rgba(255, 240, 245, 0.85)
+            );
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            color: #b83255;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d94f70;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #b83255;
+        }
+
+        /* Products */
+        .products {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 36px;
+            color: #b83255;
+            margin-bottom: 10px;
+        }
+
+        .products > p {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .flower-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            background: #fff0f4;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            color: #444;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .price {
+            color: #d94f70;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .cart-btn {
+            border: none;
+            background: #d94f70;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background: #b83255;
+        }
+
+        /* About */
+        .about {
+            padding: 70px 10%;
+            text-align: center;
+            background: #fff0f4;
+        }
+
+        .about h2 {
+            color: #b83255;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #b83255;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #b83255;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🌸 Bloom & Petals</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#flowers">Flowers</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Fresh Flowers, Beautiful Moments 🌷</h1>
+
+            <p>
+                Hand-picked flowers delivered fresh to your doorstep.
+            </p>
+
+            <a href="#flowers" class="btn">Shop Flowers</a>
+        </div>
+    </section>
+
+
+    <!-- Products -->
+    <section class="products" id="flowers">
+
+        <h2>Our Best Sellers</h2>
+
+        <p>
+            Choose from our collection of beautiful fresh flowers.
+        </p>
+
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    🌹
+                </div>
+
+                <div class="product-info">
+                    <h3>Red Rose Bouquet</h3>
+                    <div class="price">₹799</div>
+
+                    <button class="cart-btn" onclick="addToCart('Red Rose Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    🌷
+                </div>
+
+                <div class="product-info">
+                    <h3>Pink Tulip Bouquet</h3>
+                    <div class="price">₹999</div>
+
+                    <button class="cart-btn" onclick="addToCart('Pink Tulip Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    🌻
+                </div>
+
+                <div class="product-info">
+                    <h3>Sunflower Bouquet</h3>
+                    <div class="price">₹699</div>
+
+                    <button class="cart-btn" onclick="addToCart('Sunflower Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    💐
+                </div>
+
+                <div class="product-info">
+                    <h3>Mixed Flower Bouquet</h3>
+                    <div class="price">₹1,299</div>
+
+                    <button class="cart-btn" onclick="addToCart('Mixed Flower Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    🌺
+                </div>
+
+                <div class="product-info">
+                    <h3>Hibiscus Bouquet</h3>
+                    <div class="price">₹599</div>
+
+                    <button class="cart-btn" onclick="addToCart('Hibiscus Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="flower-image">
+                    🌼
+                </div>
+
+                <div class="product-info">
+                    <h3>White Daisy Bouquet</h3>
+                    <div class="price">₹649</div>
+
+                    <button class="cart-btn" onclick="addToCart('White Daisy Bouquet')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2>About Bloom & Petals</h2>
+
+        <p>
+            At Bloom & Petals, we believe every special moment deserves
+            beautiful flowers. Our bouquets are carefully prepared using
+            fresh flowers and delivered with love.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📍 Pune, Maharashtra</p>
+        <p>📞 +91 98765 43210</p>
+        <p>📧 hello@bloomandpetals.com</p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Bloom & Petals. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        function addToCart(flowerName) {
+            alert(flowerName + " has been added to your cart! 🌸");
+        }
+    </script>
+
+</body>
+</html>
+```
